@@ -29,5 +29,6 @@ urlpatterns = [
                   path('controle_geral/', admin.site.urls),
                   path('', include(router.urls)),
                   path('alunos/<int:pk>/matriculas/', ListaMatriculasAluno.as_view()),
-                  path('cursos/<int:pk>/matriculas/', ListaAlunosMatriculados.as_view())
+                  path('cursos/<int:pk>/matriculas/', ListaAlunosMatriculados.as_view()),
+                  path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
